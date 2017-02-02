@@ -3,8 +3,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#if [-f $HOME/.Xresources]; then
-#    xrdb -merge $HOME/.Xresources
+#if [-f $HOME/.Xresources.dpi]; then
+    xrdb -merge $HOME/.Xresources.dpi
 #fi
 #if [-f $HOME/.Xresources.dark]; then
     xrdb -merge $HOME/.Xresources.dark
@@ -13,7 +13,6 @@
 . $HOME/.bash_alias
 
 #bash PS1 colors
-#. $HOME/.bashps1rc
 . $HOME/.bash_zshps1rc
 
 
@@ -36,9 +35,6 @@ shopt -s histappend
 #PROMPT_COMMAND='history -a'
 PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
-#for files in $SCRIPTDIR/*; do
-#       . $files
-#   done
 
 . /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
