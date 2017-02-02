@@ -1,0 +1,7 @@
+rofi.modi:	run,window
+#include "/usr/share/rofi/themes/solarized.theme"
+rofi.terminal:              xfce4-terminal
+rofi.matching: fuzzy
+! "Paste clipboard" Set from: Default
+rofi.kb-secondary-paste:             Control+v,Insert
+rofi.theme: /usr/share/rofi/themes//solarized_alternate.rasi
