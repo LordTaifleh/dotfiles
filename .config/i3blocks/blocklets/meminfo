@@ -1,0 +1,25 @@
+#! /bin/sh
+case $BLOCK_BUTTON in
+    3) xfce4-terminal -x htop
+        ;;
+esac
+INSTANCE="${BLOCK_INSTANCE:-memavailable}"
+MEMINFO="$(cat /proc/meminfo| grep -i "$INSTANCE":)"
+NUMBER="$(echo "$MEMINFO" | tr -d -c '0-9')"
+OUT="$(echo "$NUMBER" | awk '{
+ 	sum=$1*1024 ;
+ 	#sum*=1024;
+ 	hum[1099511627776]="TiB";
+ 	hum[1073741824]="GiB";
+ 	hum[1048576]="MiB";
+ 	hum[1024]="KiB"; 
+ 	for (x=1099511627776; x>=1024; x/=1024){ 
+ 		if (sum>=x) { 
+ 			printf "%.2f %s\n" , sum/x , hum[x];
+ 			break 
+ 			} 
+ 		}
+ 	}'
+ )"
+echo "$OUT"
+echo "$OUT"

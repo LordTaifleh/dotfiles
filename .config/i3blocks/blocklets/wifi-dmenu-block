@@ -1,0 +1,7 @@
+#!/bin/bash
+INTERFACE=$1
+echo "Scanning"
+echo $(sudo bash -x ./wifi-menu -r $INTERFACE)
+
+echo "done"
+date

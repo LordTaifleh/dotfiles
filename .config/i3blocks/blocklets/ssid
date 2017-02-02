@@ -1,0 +1,39 @@
+#!/bin/bash
+
+SSID_NAME=$(iwgetid -r)
+
+#command=echo "$(iw dev wlp8s0 link | grep signal | cut -d " " -f 2-)"
+
+# You can put any urgent name so the block will give warning
+# if a network with this name is used, like public wifi or alike.
+# You can separate multiple values with \|
+
+
+case $BLOCK_BUTTON in
+    3)  gksu 'wifi-menu -r' ;;
+        *) ;;#  echo "XXX" ;;
+        esac
+
+URGENT_VALUE=""
+INTERNET=$(ping -q -w 0 -c 1 `ip r | grep default | cut -d ' ' -f 3` > /dev/null && echo 0 ||  echo 33) 
+if [[ "$INTERNET" = 33 ]]; then
+     echo "${SSID_NAME}"
+     echo "${SSID_NAME}"
+     echo "#dc322f"
+     #solarized red
+fi
+if [[ "${SSID_NAME}" != "" ]]; then
+     echo " ${SSID_NAME}"
+     echo " ${SSID_NAME}"
+     echo "#859900"
+     #solarized green
+
+     #if [[ "${URGENT_VALUE}" != "" ]] && [[ $(echo "${SSID_NAME}" | grep -we "${URGENT_VALUE}") != "" ]]; then
+     #   exit 33
+     #fi
+else
+    echo "down"
+    echo "down"
+    echo "#839496"
+    #solarized base0 grey
+fi
