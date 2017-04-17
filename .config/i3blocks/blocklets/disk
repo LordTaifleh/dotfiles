@@ -15,9 +15,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 case $BLOCK_BUTTON in
-    3) thunar 
+    3) pcmanfm 
         ;;
-    2) thunar ../../
+    2) pcmanfm ../../
         ;;
 esac
 DIR="${BLOCK_INSTANCE:-$HOME}"

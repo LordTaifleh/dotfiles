@@ -1,13 +1,15 @@
 #!/bin/sh
-UPDATES=$(checkupdates)
-UPDATECOUNT="$( $UPDATES | wc -l)"
+#UPDATES=$(checkupdates)
+UPDATECOUNT=$( checkupdates | wc -l)
 if [ "$UPDATECOUNT" = 0 ]; then
      exit 0
 else 
 case $BLOCK_BUTTON in
     3) gksu 'xfce4-terminal -x aura -Syu --noconfirm'
         ;;
-    1) echo "$UPDATES" | rofi -dmenu -p "Updates" -location 5 -lines "$UPDATECOUNT" -width -30 -no-custom -m -3 -theme-str '#window { anchor: southwest;}' || "$UPDATECOUNT"
+    1) checkupdates | rofi -dmenu -p "Updates" -no-fullscreen -lines "$UPDATECOUNT" -width -30 -no-custom -m -3 -theme-str '#window { anchor: southwest;}' > /dev/null || "$UPDATECOUNT"
+        pkill -RTMIN+3 i3blocks
+      
     ;;
 esac
     echo "$UPDATECOUNT"

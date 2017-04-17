@@ -6,15 +6,14 @@
 #if [-f $HOME/.Xresources]; then
 #    xrdb -merge $HOME/.Xresources
 #fi
-#if [-f $HOME/.Xresources.dark]; then
-    xrdb -merge $HOME/.Xresources.dark
-#fi
+ [[ -f $HOME/.Xresources.dark ]] && xrdb -merge $HOME/.Xresources.dark
+
 
 . $HOME/.bash_alias
 
 #bash PS1 colors
 #. $HOME/.bashps1rc
-. $HOME/.bash_zshps1rc
+[[ -f $HOME/.bash_zshps1rc ]] && . $HOME/.bash_zshps1rc
 
 
 export TERM="xterm-256color"
@@ -63,4 +62,4 @@ export GIT_HOSTING='git@git.sabtium.net:robert/repository'
 . /home/omicron/.config/scripts/mkcd-function.sh 
 . /home/omicron/.config/scripts/cs.sh 
 . /home/omicron/.config/scripts/android-mount-functions.sh 
-eval "$(dircolors -b $HOME/.dir_colors/dircolors.256dark)"
+[[ -f $HOME/.dir_colors/dircolors.256dark ]] && eval "$(dircolors -b $HOME/.dir_colors/dircolors.256dark)"

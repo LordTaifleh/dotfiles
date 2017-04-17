@@ -1,4 +1,4 @@
-#!/usr/bin/dash
+#!/usr/bin/bash
 #  batterybar; displays battery load_state as a bar on i3blocks
 #  
 #  Copyright 2015 Keftaa <adnan.37h@gmail.com>

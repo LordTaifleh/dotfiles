@@ -3,12 +3,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#if [-f $HOME/.Xresources.dpi]; then
-    xrdb -merge $HOME/.Xresources.dpi
-#fi
-#if [-f $HOME/.Xresources.dark]; then
-    xrdb -merge $HOME/.Xresources.dark
-#fi
+ [[ -f $HOME/.Xresources.dpi ]] && xrdb -merge $HOME/.Xresources.dpi
+
+ [[ -f $HOME/.Xresources.dark ]] && xrdb -merge $HOME/.Xresources.dark
+
 
 . $HOME/.bash_alias
 
@@ -60,4 +58,7 @@ export GIT_HOSTING='git@git.sabtium.net:robert/repository'
 . /home/omicron/.config/scripts/cs.sh 
 . /home/omicron/.config/scripts/android-mount-functions.sh 
 eval "$(dircolors -b $HOME/.dir_colors/dircolors.256dark)"
-export QT_QPA_PLATFORMTHEME=gtk2
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+#wal put this in i3 instead
+#(wal -rtq &)

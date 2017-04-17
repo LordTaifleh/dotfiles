@@ -1,7 +1,20 @@
-rofi.modi:	run,window
-#include "/usr/share/rofi/themes/solarized.theme"
+rofi.modi:	run,window,drun
 rofi.terminal:              xfce4-terminal
 rofi.matching: fuzzy
 ! "Paste clipboard" Set from: Default
 rofi.kb-secondary-paste:             Control+v,Insert
-rofi.theme: /usr/share/rofi/themes//solarized_alternate.rasi
+!rofi.theme: /usr/share/rofi/themes//solarized_alternate.rasi
+rofi.padding: $(($(xwininfo -root |awk '/Height/ { print $2}')/2)) 
+rofi.hide-scrollbar: true
+rofi.width: 75%
+rofi.columns: 1
+rofi.lines: 7
+!rofi.fullscreen: true
+!rofi.line-margin: $(($(xwininfo -root |awk '/Height/ { print $2}')/2))
+rofi.eh:2 
+!rofi.line-padding: $(($(xwininfo -root |awk '/Height/ { print $2}')/2))
+rofi.dpi: 248
+rofi.bw: 0
+
+rofi.fake-transparency: true
+rofi.font: SFNS Display 12 
