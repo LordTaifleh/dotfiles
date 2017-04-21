@@ -8,11 +8,17 @@
  [[ -f $HOME/.Xresources.dark ]] && xrdb -merge $HOME/.Xresources.dark
 
 
-. $HOME/.bash_alias
+[[ -f $HOME/.bash_alias ]] && . $HOME/.bash_alias
+
+[[ -f /etc/profile.d/vte.sh ]] && . /etc/profile.d/vte.sh
 
 #bash PS1 colors
-. $HOME/.bash_zshps1rc
+[[ -f $HOME/.bash_zshps1rc ]] && . $HOME/.bash_zshps1rc
+## use something else now
 
+export GIT_PROMPT_ONLY_IN_REPO=1
+. $HOME/build/bash-git-prompt/gitprompt.sh
+export PS1="\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;13m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] @ \[$(tput sgr0)\]\[\033[38;5;4m\]\h\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;3m\][\w]\[$(tput sgr0)\]\[\033[38;5;15m\] \n\[$(tput sgr0)\]\[\033[38;5;7m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 export TERM="xterm-256color"
 export SCRIPTDIR="/home/omicron/.config/scripts"

@@ -1,6 +1,6 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-exec --no-startup-id i3lock -i /home/omicron/.config/elbtunnelblur.png
+#exec --no-startup-id i3lock -i /home/omicron/.config/elbtunnelblur.png
 set $mod Mod4
 #set $mod Super_L
 
@@ -295,6 +295,7 @@ bindsym $mod+Shift+t exec --no-startup-id /usr/bin/telegram-desktop
 #bindsym $mod+Shift+s exec --no-startup-id  i3-msg workspace $music; append_layout /home/omciron/.config/spotifylayout.json
 #; exec --no-startup-id /usr/local/bin/spotify; exec --no-startup-id /usr/bin/blockify-ui'
 #for_window [class="^Blockify$"] floating enable
+bindsym Mod1+F7 exec --no-startup-id /usr/bin/random
 
 # Sound control
 # Mute 
@@ -309,8 +310,8 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-    && pkill
 
 
 # lock screen
-bindsym $mod+F1 exec /usr/bin/i3lock  
-bindsym $mod+Shift+F1 exec /usr/bin/i3lock-fancy & sleep 5 && exec systemctl suspend
+bindsym $mod+F1 exec /usr/bin/i3lock-wrapper  
+bindsym $mod+Shift+F1 exec /usr/bin/i3lock-wrapper & sleep 5 && exec systemctl suspend
 
 # screen switcher
 bindsym XF86Display exec --no-startup-id /usr/bin/arandr
