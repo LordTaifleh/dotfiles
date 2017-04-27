@@ -1,0 +1,10 @@
+[General]
+description = HDMI
+priority = 14
+eld-device = 7
+
+[Properties]
+device.icon_name = video-display
+
+[Jack HDMI/DP,pcm=7]
+required = ignore
