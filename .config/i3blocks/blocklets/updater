@@ -1,16 +1,15 @@
 #!/bin/sh
 #UPDATES=$(checkupdates)
 UPDATECOUNT=$( checkupdates | wc -l)
+ROFI_OPTIONS=(-no-fullscreen -width -50 -bw 2 -m -3 -theme-str '#window {anchor:southeast;}' -eh 1 -font "Monospace 6")
 if [ "$UPDATECOUNT" = 0 ]; then
      exit 0
 else 
 case $BLOCK_BUTTON in
-    3) gksu 'xfce4-terminal -x aura -Syu --noconfirm'
+    3) gksu -k 'xfce4-terminal -x aura -Syu --noconfirm'
         ;;
-    1) checkupdates | rofi -dmenu -p "Updates" -no-fullscreen -lines "$UPDATECOUNT" -width -30 -no-custom -m -3 -theme-str '#window { anchor: southwest;}' > /dev/null || "$UPDATECOUNT"
-        pkill -RTMIN+3 i3blocks
-      
-    ;;
+    1) checkupdates | rofi -dmenu -p "Updates" -lines "$UPDATECOUNT" "${ROFI_OPTIONS[@]}" >& /dev/null || "$UPDATECOUNT" && pkill -RTMIN+3 i3blocks
+        ;;
 esac
     echo "$UPDATECOUNT"
     echo "$UPDATECOUNT"

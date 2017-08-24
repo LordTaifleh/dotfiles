@@ -13,6 +13,7 @@ sudo efibootmgr -c \
 	-u "initrd=/intel-ucode.img \
 	    initrd=/initramfs-linux.img \
 	    root=UUID=9c55bbe4-9b43-4fa9-9cb0-e7c35437d2d7 \
+            vt.global_cursor_default=0 \
 	    quiet \
 	    rw \
             loglevel=3 \
