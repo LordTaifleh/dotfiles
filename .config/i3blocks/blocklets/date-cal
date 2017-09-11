@@ -1,0 +1,10 @@
+#! /bin/dash
+
+date=$(date '+%a. %d. %b. %Y')
+
+case "$BLOCK_BUTTON" in
+    1|2|3) ~/.config/i3blocks/blocklets/rofi-cal.sh >/dev/null 
+esac
+echo $date
+date '+%d.%m.%Y'
+
