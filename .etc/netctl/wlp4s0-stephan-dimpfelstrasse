@@ -1,0 +1,8 @@
+Description='Wo auch immer das hier ist...'
+Interface=wlp4s0
+Connection=wireless
+Security=wpa
+ESSID=o2-WLAN33
+IP=dhcp
+Key=3T3F4U737CV4678R
+

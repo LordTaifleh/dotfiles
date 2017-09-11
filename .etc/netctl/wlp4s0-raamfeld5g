@@ -1,0 +1,13 @@
+Description='WiFi Raamfeld'
+Interface=wlp4s0
+Connection=wireless
+Security=wpa
+ESSID='Lemsahl-Mellingstedt 5G'
+Key='Kirella5'
+IP=static
+Address='192.168.1.5/24'
+Gateway='192.168.1.1'
+DNS=('192.168.1.1')
+Priority=10
+# Uncomment this if your ssid is hidden
+#Hidden=yes

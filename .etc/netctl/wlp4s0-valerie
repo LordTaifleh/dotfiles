@@ -1,0 +1,8 @@
+Description='Wifi bei Schwesterlein'
+Interface=wlp4s0
+Connection=wireless
+Security=wpa
+IP=dhcp
+ESSID='eisscholle'
+Key='holladiewaldfee'
+

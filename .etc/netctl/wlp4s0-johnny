@@ -1,0 +1,8 @@
+Description='wifi bei johnny'
+Interface=wlp4s0
+Connection=wireless
+Security=wpa
+ESSID=OPENMJ1
+IP=dhcp
+Key=willkommeninderzukunftdub00n
+

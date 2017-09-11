@@ -1,0 +1,8 @@
+Description='Wifi bei Georgie'
+Interface=wlp4s0
+Connection=wireless
+Security=wpa
+ESSID=LTE_R
+IP=dhcp
+Key=3904390733100878
+

@@ -1,0 +1,19 @@
+Connection='wireless'
+Interface=wlp4s0
+Security='wpa-configsection'
+Description='eduroam'
+IP='dhcp'
+TimeoutWPA=30
+WPAConfigSection=(
+	'ssid="eduroam"'
+	'key_mgmt=WPA-EAP'
+	'eap=TTLS'
+	'proto=WPA2'
+	'phase2="auth=PAP"'
+	'phase1="peaplabel=0"'
+	'anonymous_identity="anonymous@studserv.uni-leipzig.de"'
+	'identity="rv37kafe@studserv.uni-leipzig.de"'
+	'password="C00lrun#"'
+)
+
+

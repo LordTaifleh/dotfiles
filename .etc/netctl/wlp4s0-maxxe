@@ -1,0 +1,8 @@
+Description='wifi bei Max Boegge'
+Interface=wlp8s0
+Connection=wireless
+Security=wpa
+IP=dhcp
+ESSID='Canisiussingel 25'
+Key='bammetjes'
+
