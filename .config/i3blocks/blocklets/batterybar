@@ -70,7 +70,7 @@ while true
 do
     load_state=$(cat /sys/class/power_supply/BAT0/capacity)
     status=$(cat /sys/class/power_supply/BAT0/status)
-    AC=$(cat /sys/class/power_supply/AC0/online)
+    AC=$(cat /sys/class/power_supply/AC/online)
     last_capacity=$(cat /sys/class/power_supply/BAT0/energy_full)
     energy_now=$(cat /sys/class/power_supply/BAT0/energy_now)
     power_now=$(cat /sys/class/power_supply/BAT0/power_now)
@@ -134,7 +134,7 @@ do
                 toggle=1
 	        color="#FF0027"
             fi
-            if [ $load_state -lt ]; then
+            if [ $load_state -lt 3 ]; then
                  $HOME/.config/i3/i3lock-wrapper
                  s2disk
             fi        

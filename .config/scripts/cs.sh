@@ -1,5 +1,5 @@
 #!/bin/sh
 function cs() {
-    cd "$@";
+    cd "${@}";
     ls -G --color=auto
 }
