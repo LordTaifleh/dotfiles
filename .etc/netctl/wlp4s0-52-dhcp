@@ -1,9 +1,0 @@
-Description='Das Wlan Zuhause...'
-Interface=wlp4s0
-Security=wpa
-IP=dhcp
-ESSID='WLAN-52-HPTL'
-Key='7830294960452949'
-TimeoutDHCP=20
-priority=5
-

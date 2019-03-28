@@ -1,8 +1,0 @@
-Description='Automatically generated profile by wifi-menu'
-Interface=wlp4s0
-Connection=wireless
-Security=wpa
-ESSID=fuchsbau
-IP=dhcp
-Key=63121263135476253478
-Priority=2

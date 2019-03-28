@@ -1,8 +1,0 @@
-Description='Hotspot vom Handy'
-Interface=wlp4s0
-Connection=wireless
-Security=wpa
-IP=dhcp
-ESSID='AndroidAP'
-Key='C00lrun#'
-

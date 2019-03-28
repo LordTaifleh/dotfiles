@@ -1,0 +1,11 @@
+#!/bin/bash
+if [[ ! -d /sys/firmware/acpi/bgrt ]] ; then 
+    echo "bgrt not available"
+    exit 1
+fi
+
+Xaxis=$(xrandr --current | grep '\*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
+Yaxis=$(xrandr --current | grep '\*' | uniq | awk '{print $1}' | cut -d 'x' -f2)
+Xoff=$(</sys/firmware/acpi/bgrt/xoffset)
+Yoff=$(</sys/firmware/acpi/bgrt/yoffset)
+convert -size ${Xaxis}x${Yaxis} xc:black -fill black -page +${Xoff}+${Yoff} "${1}" -layers flatten "${2}"

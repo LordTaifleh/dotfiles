@@ -1,2 +1,0 @@
-SUBSYSTEMS=="usb", RUN+="/usr/bin/pkill -RTMIN+2 i3blocks" 
-

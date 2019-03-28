@@ -1,8 +1,0 @@
-Description='wifi bei Sascha am Deich'
-Interface=wlp4s0
-Connection=wireless
-Security=wpa
-IP=dhcp
-ESSID='Moin!'
-Key='51elsaesser51'
-

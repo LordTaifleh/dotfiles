@@ -1,7 +1,0 @@
-[Match]
-Name=enp0s20f0u1
-Name=enp0s20f0u3
-Name=enp0s20f0u6
-
-[Network]
-DHCP=ipv4

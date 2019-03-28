@@ -1,9 +1,0 @@
-[Unit]
-Description='Automatic selection of powersaving features'
-
-[Service]
-ExecStart=/home/omicron/.config/scripts/powertop-auto.sh
-
-[Install]
-WantedBy=multi-user.target
-
