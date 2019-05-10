@@ -157,9 +157,9 @@ do
     esac
 
     if [ $status = "Full" ]; then
-echo "<span foreground=\"$color\">${squares} $load_state%</span>"
+echo "<span foreground=\"$color\">${squares}$load_state%</span>"
 else
-    echo "<span foreground=\"$color\">${squares} $load_state% $remaining</span>"
+    echo "<span foreground=\"$color\">${squares}$load_state% $remaining</span>"
 fi
     sleep $sleep_duration
 done

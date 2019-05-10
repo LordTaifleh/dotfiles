@@ -36,6 +36,6 @@ if [[ "${SSID_NAME}" != "" ]]; then
 else
     echo "down"
     echo "down"
-    echo "#839496"
+#    echo "#839496"
     #solarized base0 grey
 fi

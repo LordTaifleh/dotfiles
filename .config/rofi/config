@@ -1,19 +1,19 @@
-rofi.modi:	run,window,drun
-rofi.terminal:              xfce4-terminal
-rofi.matching: fuzzy
-! "Paste clipboard" Set from: Default
+rofi.modi:	    	run,window,drun,ssh
+rofi.terminal:      termite
+rofi.matching:      fuzzy
 rofi.kb-secondary-paste:             Control+v,Insert
-!rofi.theme: /usr/share/rofi/themes/solarized_alternate.rasi
-rofi.padding: $(xwininfo -root | awk '/Height/ {print $2/6}') 
+rofi.theme:         /home/omicron/.cache/wal/colors-rofi-dark.rasi
+rofi.padding:       100
 rofi.hide-scrollbar: true
-rofi.width: 75%
-rofi.columns: 1
+rofi.width:         1000
+rofi.separator-style: none
+rofi.ssh-client:    ssh
+rofi.ssh-command:   {terminal} -e "{ssh-client} {host}"
+rofi.lines:         5
+rofi.fullscreen:    false
+rofi.eh:            2
+!rofi.dpi:          248
+rofi.bw:            1400
 
-rofi.lines: 7
-rofi.fullscreen: true
-rofi.eh:2 
-rofi.dpi: 248
-rofi.bw: 0
-
-rofi.fake-transparency: true
-rofi.font: SFNS Display 12 
+!rofi.fake-transparency: true
+rofi.font: SFNS Display 20

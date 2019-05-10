@@ -1,9 +1,8 @@
-Xft.dpi: 216 
-!Xft.autohint: 0 
-!Xft.lcdfilter: lcddefault
-!Xft.hintstyle:  hintslight
-!Xft.hinting: 0
-!Xft.antialias: 1
-!Xft.rgba: rgb
-!Xcursor.size: 64
-
+Xft.dpi=216
+xft.autohint: 0 
+xft.lcdfilter: lcddefault
+xft.hintstyle:  hintslight
+xft.hinting: 1
+xft.antialias: 1
+xft.rgba: rgb
+Xcursor.size: 32

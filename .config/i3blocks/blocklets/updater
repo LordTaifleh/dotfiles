@@ -33,7 +33,7 @@ else
 fi
     markup \
         | sed 's/^/ /' \
-        | rofi -no-fullscreen -width -50 -bw 2 -m -3 -theme-str '#window {anchor:southeast;}' -eh 1 -font 'Monospace 6' -dmenu -p "Available updates" -markup-rows -lines "${line_num}"  > /dev/null
+        | rofi -no-fullscreen -width -50 -bw 2 -m -3 -theme-str '#window {anchor:southeast;}' -eh 1 -font 'Fira Mono 12' -dmenu -p "Available updates" -markup-rows -lines "${line_num}"  > /dev/null
     echo "$UPDATECOUNT"
     echo "$UPDATECOUNT"
     pkill -RTMIN+3 i3blocks
@@ -56,4 +56,6 @@ case $BLOCK_BUTTON in
 esac
     echo "$UPDATECOUNT"
     echo "$UPDATECOUNT"
+    echo ""
+    exit
 

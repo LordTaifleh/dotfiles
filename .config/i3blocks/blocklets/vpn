@@ -7,3 +7,33 @@ if [[ -e "${VPNC_FILE}" ]]; then
   echo "on"
   echo ""
 fi
+
+rofi="rofi -dmenu -no-fullscreen -eh 1 -bw w2 -no-custom -font 'Fira Mono 8' -hide-scrollbar"
+
+show_info(){
+    echo "not implemented" | $rofi
+}
+
+select_vpn(){
+country="$(ls /etc/openvpn/ovpn_tcp/ | rofi -dmenu -no-fullscreen -eh 1 -width -60 -bw 2  -no-custom  -font "Fira Mono 8" -hide-scrollbar -p "select country" )"
+server=
+}
+
+toggle_on_off(){
+sleep
+}
+
+case $BLOCK_BUTTON in
+    1)
+        show_info
+        ;;
+    2)
+        select_vpn
+        ;;
+    3)
+        toggle_on_off
+        ;;
+    *)
+esac
+
+

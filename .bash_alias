@@ -4,8 +4,12 @@ alias aurs='aura -As'
 alias aurr='sudo aura -r'
 alias pac='sudo aura -S'
 alias pacs='aura -Ss'
-alias pacr='sudo aura -R'
-alias pacrr='sudo aura -Rs'
+alias pacr='sudo aura -Rnc'
+alias pacrr='sudo aura -Rcns'
+alias doge='echo Please dont do shit like that.'
+function keymap(){
+		bind -p | grep -v '^#\|self-insert\|^$'
+	}
 alias auraclean='sudo aura -Rns $(pacman -Qtdq)'
 alias aurupdate='sudo aura -Ayu ; sudo aura -Syu --noconfirm'
 #alias for wifi

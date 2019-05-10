@@ -1,24 +1,19 @@
+SSH_ENV=$HOME/.ssh/environment
+function start_agent {
+    echo "Initializing new SSH agent..."
+    # spawn ssh-agent
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add
+}
 
-# .profile config file
-# the contents here get executed on login
-
-#setterm -cursor on 
-
-export HISTCONTROL="ignoredups:erasedups"
-export HISTSIZE=-1
-export HISTFILESIZE=10000
-shopt -s histappend
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-export TERM="xterm-256color"
-export EDITOR="vim"
-export VISUAL="vim"
-#fbterm -n Hack -s 20
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-for file in /etc/X11/xinit/xinitrc.d/* ; do
-    source $file
-done
-
-[[ -f $HOME/.dir_colors/dircolors.256dark ]] && \
-     eval "$(dircolors -b $HOME/.dir_colors/dircolors.256dark)"
-
+if [ -f "${SSH_ENV}" ]; then
+     . "${SSH_ENV}" > /dev/null
+     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi

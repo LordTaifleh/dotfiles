@@ -169,6 +169,7 @@ Plug 'altercation/solarized'
 Plug 'dylanaraps/wal.vim'
 Plug 'ctrlpvim/ctrlp.vim' "does same as command-t
 Plug 'tpope/vim-fugitive'
+Plug 'peterhoeg/vim-qml'
 ""  Plugin 'Shougo/deoplete.nvim'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
@@ -178,6 +179,10 @@ Plug 'tpope/vim-speeddating'
 Plug 'ryanoasis/vim-devicons'
 Plug 'yggdroot/indentline'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'mboughaba/i3config.vim'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-glaive'
+Plug 'google/vim-codefmt'
 "Plun 'christoomey/vim-tmux-navigator'
 "Plun 'roxma/vim-hug-neovim-rpc'
 "Plun 'autozimu/LanguageClient-neovim'
@@ -230,12 +235,12 @@ let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-spli
 let g:ycm_filetype_whitelist = { '*': 1 }
 "let g:ycm_key_invoke_completion = '<C-Space>'""""""""""""""""
 if !&scrolloff
-  set scrolloff=1
+	set scrolloff=1
 endif
 set display+=lastline
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g`\"" | endif
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+				\| exe "normal! g`\"" | endif
 endif
 "set t_Co=256
 "syntax enable
@@ -244,12 +249,24 @@ endif
 "set background=light
 "colorscheme solarized
 au BufNewFile,BufRead *.py :
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+			\ set tabstop=4 |
+			\ set softtabstop=4 |
+			\ set shiftwidth=4 |
+			\ set textwidth=79 |
+			\ set expandtab |
+			\ set autoindent |
+			\ set fileformat=unix
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
+
+" fmt
+augroup autoformat_settings
+	autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+	autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+	autocmd FileType java AutoFormatBuffer google-java-format
+	autocmd FileType python AutoFormatBuffer yapf
+	" Alternative: autocmd FileType python AutoFormatBuffer autopep8
+augroup END
+call glaive#Install()
+Glaive codefmt plugin[mappings]
+
