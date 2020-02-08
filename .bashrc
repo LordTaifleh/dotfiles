@@ -3,7 +3,7 @@
 #
 
 [[ $- != *i* ]] && return
-
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/VSCode-linux-x64/bin
 export GIT_PROMPT_ONLY_IN_REPO=1
 export HISTCONTROL="ignoredups:erasedups"
 export HISTSIZE=-1
@@ -29,7 +29,9 @@ fi
 if [[ -f ${HOME}/.bash_${HOSTNAME} ]]; then
 	source $HOME/.bash_${HOSTNAME}
 fi
-
+fanspeed() {
+	while : ; do sensors | awk '{if ($0 ~ /Package/) temp = $4; else if ($0 ~ /fan/) {fan = $2; unit = $3}} END{print temp"  "fan" "unit}'; sleep 2; done
+}
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
@@ -190,3 +192,6 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 export PS1="\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;13m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] @ \[$(tput sgr0)\]\[\033[38;5;4m\]\h\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;3m\][\w]\[$(tput sgr0)\]\[\033[38;5;15m\] \n\[$(tput sgr0)\]\[\033[38;5;7m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+export TERM=xterm
+
+source /home/omicron/.config/broot/launcher/bash/br
